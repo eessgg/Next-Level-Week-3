@@ -4,7 +4,7 @@ import { FiPlus } from "react-icons/fi";
 import { Map, TileLayer } from "react-leaflet";
 
 import "../styles/pages/orphanage-map.css";
-import 'leaflet/dist/leaflet.css'
+import 'leaflet/dist/leaflet.css';
 import mapMarkerImg from "../images/Local.svg";
 
 const OrphanagesMap = () => {
@@ -22,7 +22,6 @@ const OrphanagesMap = () => {
           <span> São Paulo </span>
         </footer>
       </aside>
-
       <Map
         center={[-27.2092052, -49.6401092]}
         zoom={15}
