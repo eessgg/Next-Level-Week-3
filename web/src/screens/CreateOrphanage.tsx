@@ -13,13 +13,13 @@ import { useHistory } from "react-router-dom";
 export default function CreateOrphanage() {
   const history = useHistory()
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
-  const [name, setName] = useState("");
-  const [about, setAbout] = useState("");
-  const [instructions, setInstructions] = useState("");
-  const [opening_hours, setOpeningHours] = useState("");
+  const [name, setName] = useState('');
+  const [about, setAbout] = useState('');
+  const [instructions, setInstructions] = useState('');
+  const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
-  const [images , setImages] = useState<File[]>([]);
-  const [previewimages, setPreviewImages] = useState<string[]>([])
+  const [images, setImages] = useState<File[]>([]);
+  const [previewimages, setPreviewImages] = useState<string[]>([]);
 
   function handleMapClick(event: LeafletMouseEvent ) {
     const { lat, lng } = event.latlng;
@@ -28,29 +28,6 @@ export default function CreateOrphanage() {
       latitude: lat,
       longitude: lng,
     });
-  }
-
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
-    const {latitude, longitude} = position;
-
-    const data = new FormData();
-    data.append('name', name);
-    data.append('about', about);
-    data.append('latitude', String(latitude));
-    data.append('longitude', String(longitude));
-    data.append('instructions', instructions);
-    data.append('opening_hours', opening_hours);
-    data.append('open_on_weekends', String(open_on_weekends));
-
-    images.forEach(image => {
-      data.append('images', image)
-    })
-
-    await api.post('orphanages', data);
-
-    alert('Cadastro OK')
-    history.push('/app')
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
@@ -68,8 +45,32 @@ export default function CreateOrphanage() {
     setPreviewImages(selectedImagesPreview)
   }
 
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    const {latitude, longitude} = position;
+
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('about', about);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('instructions', instructions);
+    data.append('opening_hours', opening_hours);
+    data.append('open_on_weekends', String(open_on_weekends));
+
+    images.forEach(image => {
+      data.append('images', image)
+    })
+
+    await api.post('orphanages', data);
+
+    alert('Cadastro realizado com sucesso!✔️')
+    history.push('/app')
+  }
+
   return (
-    <div id="page-create-orphanage">
+     <div id="page-create-orphanage">
       <Sidebar />
       <main>
         <form onSubmit={handleSubmit} className="create-orphanage-form">
@@ -77,14 +78,14 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map
-              center={[-27.2092052,-49.6401092]}
+              center={[-23.6009,-46.484570]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onClick={handleMapClick}
             >
-               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               {/* <TileLayer
-                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_VAR_MAPBOX}`}
+                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX}`}
               /> */}
 
               { position.latitude !== 0 && (
