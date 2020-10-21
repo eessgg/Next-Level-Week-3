@@ -24,6 +24,10 @@
   - pacotes | packages:
     - typeorm - cors  - express - express-async-errors - sqlite3 - yup
 
+🔹**Mobile Stack**
+  - React Native
+  - React Navigation
+  - Axios
 
 
 Licença

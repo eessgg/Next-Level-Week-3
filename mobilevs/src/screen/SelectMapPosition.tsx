@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import MapView, { Marker, MapEvent } from 'react-native-maps';
 
-import mapMarkerImg from '../../images/map-marker.png';
+import mapMarkerImg from '../images/mapmarker.png';
 
 export default function SelectMapPosition() {
   const navigation = useNavigation();
-  const [ position, setPosition ] =useState({latitude:0, longitude: 0})
+  const [ position, setPosition ] = useState({latitude:0, longitude: 0});
 
   function handleNextStep() {
     navigation.navigate('OrphanageData', {position});
@@ -21,10 +21,10 @@ export default function SelectMapPosition() {
 
   return (
     <View style={styles.container}>
-      <MapView 
+      <MapView
         initialRegion={{
-          latitude: -27.2092052,
-          longitude: -49.6401092,
+          latitude: -23.6009,
+          longitude: -46.484570,
           latitudeDelta: 0.008,
           longitudeDelta: 0.008,
         }}

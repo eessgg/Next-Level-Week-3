@@ -1,16 +1,19 @@
-import React from "react";
-import { View, Text} from 'react-native';
-import { useFonts} from 'expo-font';
-import {Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold} from '@expo-google-fonts/nunito'
+import React from 'react'
 
-import Routes from './src/routes'
+import { useFonts } from 'expo-font';
+import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
+
+import Routes from './src/routes';
 
 export default function App() {
-  const [ fontsLoaded ] = useFonts({
-    Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold
+
+  const [fontsLoaded] = useFonts({
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
   });
 
-  if(!fontsLoaded) {
+  if (!fontsLoaded) {
     return null;
   }
 
