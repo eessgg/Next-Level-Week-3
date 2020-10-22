@@ -104,3 +104,15 @@
   bottom: 0;
   width: 100%;
 }
+
+.login-area {
+  padding: 48px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.login-area .btn {
+  padding: 24px 0;
+  background: ;
+}

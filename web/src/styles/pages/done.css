@@ -1,0 +1,43 @@
+#done-container {
+  width: 100vw;
+  height: 100vh;
+  background: #37C77F;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.done-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.done-wrapper .content {
+  margin: 48px;
+  width: 350px;
+  text-align: center;
+}
+
+.done-wrapper .image img {
+  margin: 24px;
+  width: 250px;
+}
+
+.done-wrapper .content .done-title {
+  margin: 24px;
+}
+
+.done-wrapper .content .done-text {
+  margin: 24px 0;
+}
+
+.go-app {
+  background: #20A664;
+  border-radius: 12px;
+  color: #fff;
+  padding: 16px 12px;
+  font-size: 18px;
+  text-decoration: none;
+}

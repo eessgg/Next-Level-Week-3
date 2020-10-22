@@ -9,7 +9,9 @@ const Landing = () => {
   return (
    <div id="page-landing">
       <div className="content-wrapper">
-        <img src={logoImg} alt="Happy"/>
+        <Link to="/">
+            <img src={logoImg} alt="Happy" />
+          </Link>
 
         <main>
           <h1>Leve felicidade para o mundo</h1>

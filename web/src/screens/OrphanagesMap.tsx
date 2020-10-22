@@ -29,11 +29,21 @@ const OrphanagesMap = () => {
     <div id="page-map">
       <aside>
         <header>
-          <img src={mapMarkerImg} alt="Happy"/>
+          <Link to="/">
+            <img src={mapMarkerImg} alt="Happy" />
+          </Link>
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando a sua visita {':)'}</p>
         </header>
 
+        <div className="login-area">
+          <Link to="/app" className="btn">
+            Login
+          </Link>
+          <Link to="/app" className="btn">
+            Cadastro
+          </Link>
+        </div>
         <footer>
           <strong>Rio do Sul</strong>
           <span>Santa Catarina</span>
