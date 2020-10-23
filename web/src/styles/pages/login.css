@@ -1,0 +1,66 @@
+#login-container {
+  width: 100vw;
+  height: 100vh;
+  background: #15C3D6;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 5C8599 / 4D6F80 */
+/* 8FA7B2 */
+/* 37C77F */
+
+.login-img {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-img img {
+  width: 160px;
+  margin: 48px 0;
+}
+
+.login-form {
+  background: #fff;
+  color: #4D6F80;
+  width: 100%;
+  max-width:520px;
+  height: 100%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 78px;
+}
+
+.login-form .control-group {
+    display: flex;
+    flex-direction: column;
+  padding: 12px 0;
+  margin-bottom: 44px 0;
+}
+
+.login-form .control-group label {
+    color: #8FA7B2;
+    padding: 8px 0;
+}
+
+.login-form .control-group input {
+  padding: 16px 12px;
+  border-radius: 8px;
+  border: 1px solid #8FA7B2;
+}
+
+.btn-submit {
+  background: #73e4ac;
+  border: none;
+  color: #fff;
+}
+.btn-submit:hover{ 
+  background: #37C77F;
+}

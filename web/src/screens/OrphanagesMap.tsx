@@ -37,10 +37,10 @@ const OrphanagesMap = () => {
         </header>
 
         <div className="login-area">
-          <Link to="/app" className="btn">
+          <Link to="/login" className="btn">
             Login
           </Link>
-          <Link to="/app" className="btn">
+          <Link to="/signin" className="btn">
             Cadastro
           </Link>
         </div>
